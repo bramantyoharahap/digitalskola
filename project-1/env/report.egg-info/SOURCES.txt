@@ -1,0 +1,8 @@
+setup.py
+report.egg-info/PKG-INFO
+report.egg-info/SOURCES.txt
+report.egg-info/dependency_links.txt
+report.egg-info/top_level.txt
+src/excel_report.py
+src/operators/__init__.py
+src/operators/xlsx_report_plugin.py
