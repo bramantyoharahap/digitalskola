@@ -7,7 +7,8 @@ spark = SparkSession.builder \
     .appName("Project_5_Tyo") \
     .getOrCreate()
 
-file = "/Users/fbramantyo/Downloads/fhv_tripdata_2021-02.parquet"
+# file = "/Users/fbramantyo/Downloads/fhv_tripdata_2021-02.parquet"
+file = "../datasource/fhv_tripdata_2021-02.parquet"
 tempView = "fhv_tripdata"
 
 df_data = spark.read.parquet(file)
