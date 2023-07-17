@@ -31,6 +31,7 @@ while True :
         message_raw = message.value
         json_message = loads(message_raw)
         if json_message['type'] == 'trade' :
+            print(json_message['data'])
             for result in json_message['data'] :
                 collection.insert_one(result)
                 print('insert data success')
