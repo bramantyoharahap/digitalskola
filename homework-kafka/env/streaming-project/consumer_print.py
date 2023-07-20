@@ -8,7 +8,7 @@ mongo_url = 'mongodb+srv://digitalskola:digitalskola@cluster0.nadbkym.mongodb.ne
 mongo_client = MongoClient(mongo_url, server_api=ServerApi('1'))
 
 db = mongo_client['digitalskola']
-collection = db['project6_kafka']
+collection = db['finnhub_trades']
 
 try:
     mongo_client.admin.command('ping')
@@ -33,5 +33,4 @@ while True :
         if json_message['type'] == 'trade' :
             print(json_message['data'])
             for result in json_message['data'] :
-                collection.insert_one(result)
-                print('insert data success')
+                print(result)
