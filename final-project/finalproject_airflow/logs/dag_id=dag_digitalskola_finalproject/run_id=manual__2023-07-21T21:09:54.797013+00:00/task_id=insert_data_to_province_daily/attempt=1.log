@@ -1,0 +1,32 @@
+[2023-07-21 21:10:29,736] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_province_daily manual__2023-07-21T21:09:54.797013+00:00 [queued]>
+[2023-07-21 21:10:29,862] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_province_daily manual__2023-07-21T21:09:54.797013+00:00 [queued]>
+[2023-07-21 21:10:29,864] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 21:10:29,867] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 21:10:29,869] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 21:10:29,945] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_province_daily> on 2023-07-21 21:09:54.797013+00:00
+[2023-07-21 21:10:29,969] {standard_task_runner.py:52} INFO - Started process 4100 to run task
+[2023-07-21 21:10:30,001] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_province_daily', 'manual__2023-07-21T21:09:54.797013+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmplur1l9zj', '--error-file', '/tmp/tmpr35f0xg2']
+[2023-07-21 21:10:30,083] {standard_task_runner.py:80} INFO - Job 78: Subtask insert_data_to_province_daily
+[2023-07-21 21:10:31,477] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_province_daily manual__2023-07-21T21:09:54.797013+00:00 [running]> on host 34be34978432
+[2023-07-21 21:10:32,538] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_province_daily
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T21:09:54.797013+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T21:09:54.797013+00:00
+[2023-07-21 21:10:32,557] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_digitalskola_finalproject.py", line 61, in insert_data_to_province_daily
+    transformer.insert_data_to_province_daily()
+AttributeError: 'Transformer' object has no attribute 'insert_data_to_province_daily'
+[2023-07-21 21:10:32,634] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_province_daily, execution_date=20230721T210954, start_date=20230721T211029, end_date=20230721T211032
+[2023-07-21 21:10:32,711] {standard_task_runner.py:97} ERROR - Failed to execute job 78 for task insert_data_to_province_daily ('Transformer' object has no attribute 'insert_data_to_province_daily'; 4100)
+[2023-07-21 21:10:32,850] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-07-21 21:10:33,018] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

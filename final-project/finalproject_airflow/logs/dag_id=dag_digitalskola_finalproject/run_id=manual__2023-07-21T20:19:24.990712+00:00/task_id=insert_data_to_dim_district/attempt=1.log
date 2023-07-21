@@ -1,0 +1,67 @@
+[2023-07-21 20:19:41,463] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_district manual__2023-07-21T20:19:24.990712+00:00 [queued]>
+[2023-07-21 20:19:41,507] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_district manual__2023-07-21T20:19:24.990712+00:00 [queued]>
+[2023-07-21 20:19:41,510] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 20:19:41,512] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 20:19:41,517] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 20:19:41,617] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_dim_district> on 2023-07-21 20:19:24.990712+00:00
+[2023-07-21 20:19:41,726] {standard_task_runner.py:52} INFO - Started process 3459 to run task
+[2023-07-21 20:19:41,768] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_dim_district', 'manual__2023-07-21T20:19:24.990712+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmpjcrbneog', '--error-file', '/tmp/tmpiq367uuy']
+[2023-07-21 20:19:41,784] {standard_task_runner.py:80} INFO - Job 59: Subtask insert_data_to_dim_district
+[2023-07-21 20:19:42,461] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_district manual__2023-07-21T20:19:24.990712+00:00 [running]> on host 34be34978432
+[2023-07-21 20:19:42,672] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_dim_district
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T20:19:24.990712+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T20:19:24.990712+00:00
+[2023-07-21 20:19:42,886] {transformer.py:17} INFO - GET DATA FROM TABLE covid_jabar SUCCESS
+[2023-07-21 20:19:42,922] {logging_mixin.py:115} INFO -     kode_kab kode_prov                 nama_kab
+0       3204        32        Kabupaten Bandung
+1       3217        32  Kabupaten Bandung Barat
+2       3216        32         Kabupaten Bekasi
+3       3201        32          Kabupaten Bogor
+4       3207        32         Kabupaten Ciamis
+..       ...       ...                      ...
+140     3203        32        Kabupaten Cianjur
+141     3209        32        Kabupaten Cirebon
+142     3205        32          Kabupaten Garut
+143     3212        32      Kabupaten Indramayu
+144     3215        32       Kabupaten Karawang
+
+[145 rows x 3 columns]
+[2023-07-21 20:19:42,953] {logging_mixin.py:115} INFO -    district_id province_id            district_name
+0         3204          32        Kabupaten Bandung
+1         3217          32  Kabupaten Bandung Barat
+2         3216          32         Kabupaten Bekasi
+3         3201          32          Kabupaten Bogor
+4         3207          32         Kabupaten Ciamis
+5         3203          32        Kabupaten Cianjur
+6         3209          32        Kabupaten Cirebon
+7         3205          32          Kabupaten Garut
+8         3212          32      Kabupaten Indramayu
+9         3215          32       Kabupaten Karawang
+10        3208          32       Kabupaten Kuningan
+11        3210          32     Kabupaten Majalengka
+12        3218          32    Kabupaten Pangandaran
+13        3214          32     Kabupaten Purwakarta
+14        3213          32         Kabupaten Subang
+15        3202          32       Kabupaten Sukabumi
+16        3211          32       Kabupaten Sumedang
+17        3206          32    Kabupaten Tasikmalaya
+18        3273          32             Kota Bandung
+19        3279          32              Kota Banjar
+20        3275          32              Kota Bekasi
+21        3271          32               Kota Bogor
+22        3277          32              Kota Cimahi
+23        3274          32             Kota Cirebon
+24        3276          32               Kota Depok
+25        3272          32            Kota Sukabumi
+26        3278          32         Kota Tasikmalaya
+[2023-07-21 20:19:43,166] {transformer.py:55} INFO - DATA INSERTED SUCCESS TO TABLE dim_district
+[2023-07-21 20:19:43,169] {python.py:173} INFO - Done. Returned value was: None
+[2023-07-21 20:19:43,220] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_dim_district, execution_date=20230721T201924, start_date=20230721T201941, end_date=20230721T201943
+[2023-07-21 20:19:43,330] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-07-21 20:19:43,447] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

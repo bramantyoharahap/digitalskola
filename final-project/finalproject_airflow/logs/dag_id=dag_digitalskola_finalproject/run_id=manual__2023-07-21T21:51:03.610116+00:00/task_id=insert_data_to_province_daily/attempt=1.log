@@ -1,0 +1,26 @@
+[2023-07-21 21:51:07,714] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_province_daily manual__2023-07-21T21:51:03.610116+00:00 [queued]>
+[2023-07-21 21:51:07,776] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_province_daily manual__2023-07-21T21:51:03.610116+00:00 [queued]>
+[2023-07-21 21:51:07,779] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 21:51:07,788] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 21:51:07,791] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 21:51:07,924] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_province_daily> on 2023-07-21 21:51:03.610116+00:00
+[2023-07-21 21:51:07,942] {standard_task_runner.py:52} INFO - Started process 4571 to run task
+[2023-07-21 21:51:07,962] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_province_daily', 'manual__2023-07-21T21:51:03.610116+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmpdcszmrzg', '--error-file', '/tmp/tmpipnlx94z']
+[2023-07-21 21:51:07,966] {standard_task_runner.py:80} INFO - Job 81: Subtask insert_data_to_province_daily
+[2023-07-21 21:51:08,179] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_province_daily manual__2023-07-21T21:51:03.610116+00:00 [running]> on host 34be34978432
+[2023-07-21 21:51:08,627] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_province_daily
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T21:51:03.610116+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T21:51:03.610116+00:00
+[2023-07-21 21:51:08,941] {transformer.py:20} INFO - GET DATA FROM TABLE covid_jabar SUCCESS
+[2023-07-21 21:51:09,204] {transformer.py:26} INFO - GET DATA FROM TABLE dim_case SUCCESS
+[2023-07-21 21:51:09,674] {transformer.py:140} INFO - DATA INSERTED SUCCESS TO TABLE province_daily
+[2023-07-21 21:51:09,678] {python.py:173} INFO - Done. Returned value was: None
+[2023-07-21 21:51:09,768] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_province_daily, execution_date=20230721T215103, start_date=20230721T215107, end_date=20230721T215109
+[2023-07-21 21:51:09,884] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-07-21 21:51:09,990] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

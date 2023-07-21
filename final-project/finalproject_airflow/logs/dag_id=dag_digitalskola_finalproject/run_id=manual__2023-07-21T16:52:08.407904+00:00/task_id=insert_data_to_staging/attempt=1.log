@@ -1,0 +1,24 @@
+[2023-07-21 16:52:14,553] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_staging manual__2023-07-21T16:52:08.407904+00:00 [queued]>
+[2023-07-21 16:52:14,786] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_staging manual__2023-07-21T16:52:08.407904+00:00 [queued]>
+[2023-07-21 16:52:14,794] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 16:52:14,801] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 16:52:14,806] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 16:52:15,138] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_staging> on 2023-07-21 16:52:08.407904+00:00
+[2023-07-21 16:52:15,411] {standard_task_runner.py:52} INFO - Started process 930 to run task
+[2023-07-21 16:52:15,522] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_staging', 'manual__2023-07-21T16:52:08.407904+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmppwm7ooo_', '--error-file', '/tmp/tmp8vl6lpfl']
+[2023-07-21 16:52:15,551] {standard_task_runner.py:80} INFO - Job 4: Subtask insert_data_to_staging
+[2023-07-21 16:52:17,436] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_staging manual__2023-07-21T16:52:08.407904+00:00 [running]> on host 34be34978432
+[2023-07-21 16:52:18,043] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_staging
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T16:52:08.407904+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T16:52:08.407904+00:00
+[2023-07-21 16:52:18,138] {logging_mixin.py:115} INFO - MYSQL
+[2023-07-21 16:52:18,140] {python.py:173} INFO - Done. Returned value was: None
+[2023-07-21 16:52:18,243] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_staging, execution_date=20230721T165208, start_date=20230721T165214, end_date=20230721T165218
+[2023-07-21 16:52:18,353] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-07-21 16:52:18,704] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

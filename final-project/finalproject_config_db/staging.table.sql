@@ -21,3 +21,5 @@ CREATE TABLE IF NOT EXISTS covid_jabar(
     suspect_meninggal BIGINT,
     tanggal TEXT
 );
+
+select * from covid_jabar

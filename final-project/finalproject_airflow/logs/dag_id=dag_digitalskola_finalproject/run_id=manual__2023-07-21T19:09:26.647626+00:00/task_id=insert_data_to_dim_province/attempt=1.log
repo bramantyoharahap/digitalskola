@@ -1,0 +1,41 @@
+[2023-07-21 19:09:54,389] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_province manual__2023-07-21T19:09:26.647626+00:00 [queued]>
+[2023-07-21 19:09:54,600] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_province manual__2023-07-21T19:09:26.647626+00:00 [queued]>
+[2023-07-21 19:09:54,604] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 19:09:54,614] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 19:09:54,707] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 19:09:55,365] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_dim_province> on 2023-07-21 19:09:26.647626+00:00
+[2023-07-21 19:09:55,590] {standard_task_runner.py:52} INFO - Started process 2600 to run task
+[2023-07-21 19:09:56,079] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_dim_province', 'manual__2023-07-21T19:09:26.647626+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmpv26th6ig', '--error-file', '/tmp/tmpom6sozoy']
+[2023-07-21 19:09:56,117] {standard_task_runner.py:80} INFO - Job 42: Subtask insert_data_to_dim_province
+[2023-07-21 19:09:59,124] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_province manual__2023-07-21T19:09:26.647626+00:00 [running]> on host 34be34978432
+[2023-07-21 19:09:59,867] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_dim_province
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T19:09:26.647626+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T19:09:26.647626+00:00
+[2023-07-21 19:10:00,769] {transformer.py:14} INFO - GET DATA FROM covid_jabar SUCCESS
+[2023-07-21 19:10:00,942] {logging_mixin.py:115} INFO -     kode_prov   nama_prov
+0          32  Jawa Barat
+1          32  Jawa Barat
+2          32  Jawa Barat
+3          32  Jawa Barat
+4          32  Jawa Barat
+..        ...         ...
+140        32  Jawa Barat
+141        32  Jawa Barat
+142        32  Jawa Barat
+143        32  Jawa Barat
+144        32  Jawa Barat
+
+[145 rows x 2 columns]
+[2023-07-21 19:10:01,100] {logging_mixin.py:115} INFO -   province_id province_name
+0          32    Jawa Barat
+[2023-07-21 19:10:02,002] {transformer.py:31} INFO - DATA INSERTED SUCCESS TO dim_province
+[2023-07-21 19:10:02,008] {python.py:173} INFO - Done. Returned value was: None
+[2023-07-21 19:10:02,135] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_dim_province, execution_date=20230721T190926, start_date=20230721T190954, end_date=20230721T191002
+[2023-07-21 19:10:02,528] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-07-21 19:10:02,738] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

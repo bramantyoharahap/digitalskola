@@ -1,0 +1,40 @@
+[2023-07-21 23:07:09,435] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_district_daily manual__2023-07-21T23:07:04.408329+00:00 [queued]>
+[2023-07-21 23:07:09,506] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_district_daily manual__2023-07-21T23:07:04.408329+00:00 [queued]>
+[2023-07-21 23:07:09,508] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 23:07:09,524] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 23:07:09,556] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 23:07:09,624] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_district_daily> on 2023-07-21 23:07:04.408329+00:00
+[2023-07-21 23:07:09,655] {standard_task_runner.py:52} INFO - Started process 5074 to run task
+[2023-07-21 23:07:09,672] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_district_daily', 'manual__2023-07-21T23:07:04.408329+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmpepbwc_lq', '--error-file', '/tmp/tmppu3cx0oq']
+[2023-07-21 23:07:09,679] {standard_task_runner.py:80} INFO - Job 82: Subtask insert_data_to_district_daily
+[2023-07-21 23:07:09,885] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_district_daily manual__2023-07-21T23:07:04.408329+00:00 [running]> on host 34be34978432
+[2023-07-21 23:07:10,073] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_district_daily
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T23:07:04.408329+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T23:07:04.408329+00:00
+[2023-07-21 23:07:10,256] {transformer.py:27} INFO - GET DATA FROM TABLE covid_jabar SUCCESS
+[2023-07-21 23:07:10,369] {transformer.py:33} INFO - GET DATA FROM TABLE dim_case SUCCESS
+[2023-07-21 23:07:10,375] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_digitalskola_finalproject.py", line 58, in insert_data_to_district_daily
+    transformer.insert_data_to_district_daily()
+  File "/opt/airflow/dags/modules/transformer.py", line 173, in insert_data_to_district_daily
+    data = data.melt(id_vars=['tanggal', 'kode_kab'], var_name='status', value_name='total').sort_values(['tanggal','kode_prov'])
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 8346, in melt
+    ignore_index=ignore_index,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/reshape/melt.py", line 83, in melt
+    "The following 'id_vars' are not present "
+KeyError: "The following 'id_vars' are not present in the DataFrame: ['kode_kab']"
+[2023-07-21 23:07:10,420] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_district_daily, execution_date=20230721T230704, start_date=20230721T230709, end_date=20230721T230710
+[2023-07-21 23:07:10,453] {standard_task_runner.py:97} ERROR - Failed to execute job 82 for task insert_data_to_district_daily ("The following 'id_vars' are not present in the DataFrame: ['kode_kab']"; 5074)
+[2023-07-21 23:07:10,553] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-07-21 23:07:10,700] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

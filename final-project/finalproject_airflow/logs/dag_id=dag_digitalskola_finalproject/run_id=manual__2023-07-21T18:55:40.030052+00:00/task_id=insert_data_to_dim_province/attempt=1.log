@@ -1,0 +1,89 @@
+[2023-07-21 18:55:52,402] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_province manual__2023-07-21T18:55:40.030052+00:00 [queued]>
+[2023-07-21 18:55:52,736] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_province manual__2023-07-21T18:55:40.030052+00:00 [queued]>
+[2023-07-21 18:55:52,749] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 18:55:52,776] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 18:55:52,788] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 18:55:52,996] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): insert_data_to_dim_province> on 2023-07-21 18:55:40.030052+00:00
+[2023-07-21 18:55:53,130] {standard_task_runner.py:52} INFO - Started process 2396 to run task
+[2023-07-21 18:55:53,311] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'insert_data_to_dim_province', 'manual__2023-07-21T18:55:40.030052+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmpo4d0v2zy', '--error-file', '/tmp/tmp0csvlwep']
+[2023-07-21 18:55:53,413] {standard_task_runner.py:80} INFO - Job 34: Subtask insert_data_to_dim_province
+[2023-07-21 18:55:55,652] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.insert_data_to_dim_province manual__2023-07-21T18:55:40.030052+00:00 [running]> on host 34be34978432
+[2023-07-21 18:55:58,338] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=insert_data_to_dim_province
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T18:55:40.030052+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T18:55:40.030052+00:00
+[2023-07-21 18:55:59,032] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/mysql/connector/connection_cext.py", line 538, in cmd_query
+    query_attrs=self._query_attrs)
+_mysql_connector.MySQLInterfaceError: Table '***.covid_jabar' doesn't exist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1706, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mysql/connector/cursor_cext.py", line 271, in execute
+    raw_as_string=self._raw_as_string)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mysql/connector/connection_cext.py", line 541, in cmd_query
+    sqlstate=exc.sqlstate)
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'mysql.covid_jabar' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag_digitalskola_finalproject.py", line 48, in insert_data_to_dim_province
+    transformer.insert_data_to_dim_province()
+  File "/opt/airflow/dags/modules/transformer.py", line 18, in insert_data_to_dim_province
+    df_covidjabar = self.get_covidjabar_data()
+  File "/opt/airflow/dags/modules/transformer.py", line 13, in get_covidjabar_data
+    df = pd.read_sql(sql=sql, con=self.mysql_engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 634, in read_sql
+    chunksize=chunksize,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1579, in read_query
+    result = self.execute(*args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/sql.py", line 1424, in execute
+    return self.connectable.execution_options().execute(*args, **kwargs)
+  File "<string>", line 2, in execute
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/deprecations.py", line 390, in warned
+    return fn(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3037, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1190, in execute
+    future=False,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _exec_driver_sql
+    distilled_parameters,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1749, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1930, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1706, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mysql/connector/cursor_cext.py", line 271, in execute
+    raw_as_string=self._raw_as_string)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mysql/connector/connection_cext.py", line 541, in cmd_query
+    sqlstate=exc.sqlstate)
+sqlalchemy.exc.ProgrammingError: (***.connector.errors.ProgrammingError) 1146 (42S02): Table '***.covid_jabar' doesn't exist
+[SQL: SELECT * FROM covid_jabar]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+[2023-07-21 18:55:59,261] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=dag_digitalskola_finalproject, task_id=insert_data_to_dim_province, execution_date=20230721T185540, start_date=20230721T185552, end_date=20230721T185559
+[2023-07-21 18:55:59,533] {standard_task_runner.py:97} ERROR - Failed to execute job 34 for task insert_data_to_dim_province ((***.connector.errors.ProgrammingError) 1146 (42S02): Table '***.covid_jabar' doesn't exist
+[SQL: SELECT * FROM covid_jabar]
+(Background on this error at: http://sqlalche.me/e/14/f405); 2396)
+[2023-07-21 18:55:59,807] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-07-21 18:56:01,603] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

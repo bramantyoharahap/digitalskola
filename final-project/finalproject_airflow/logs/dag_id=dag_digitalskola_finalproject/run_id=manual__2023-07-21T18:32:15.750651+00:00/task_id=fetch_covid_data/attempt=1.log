@@ -1,0 +1,26 @@
+[2023-07-21 18:32:19,697] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.fetch_covid_data manual__2023-07-21T18:32:15.750651+00:00 [queued]>
+[2023-07-21 18:32:20,037] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: dag_digitalskola_finalproject.fetch_covid_data manual__2023-07-21T18:32:15.750651+00:00 [queued]>
+[2023-07-21 18:32:20,103] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 18:32:20,150] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-07-21 18:32:20,156] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-21 18:32:20,316] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): fetch_covid_data> on 2023-07-21 18:32:15.750651+00:00
+[2023-07-21 18:32:20,466] {standard_task_runner.py:52} INFO - Started process 2096 to run task
+[2023-07-21 18:32:20,559] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dag_digitalskola_finalproject', 'fetch_covid_data', 'manual__2023-07-21T18:32:15.750651+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/dag_digitalskola_finalproject.py', '--cfg-path', '/tmp/tmpso6hut9f', '--error-file', '/tmp/tmp0czeu5rh']
+[2023-07-21 18:32:20,570] {standard_task_runner.py:80} INFO - Job 20: Subtask fetch_covid_data
+[2023-07-21 18:32:22,522] {task_command.py:369} INFO - Running <TaskInstance: dag_digitalskola_finalproject.fetch_covid_data manual__2023-07-21T18:32:15.750651+00:00 [running]> on host 34be34978432
+[2023-07-21 18:32:22,799] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dag_digitalskola_finalproject
+AIRFLOW_CTX_TASK_ID=fetch_covid_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-21T18:32:15.750651+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-21T18:32:15.750651+00:00
+[2023-07-21 18:32:22,923] {covid_scraper.py:13} INFO - GET DATA FROM API COMPLETED
+[2023-07-21 18:32:22,936] {covid_scraper.py:15} INFO - CONVERT DATA FROM API TO DATAFRAME COMPLETED
+[2023-07-21 18:32:23,810] {dag_digitalskola_finalproject.py:42} INFO - DATA INSERTED SUCCESS TO MYSQL
+[2023-07-21 18:32:23,820] {python.py:173} INFO - Done. Returned value was: None
+[2023-07-21 18:32:24,473] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_digitalskola_finalproject, task_id=fetch_covid_data, execution_date=20230721T183215, start_date=20230721T183219, end_date=20230721T183224
+[2023-07-21 18:32:25,533] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-07-21 18:32:27,181] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
